@@ -3,6 +3,9 @@ const https = require("https"); // Do nont have to install because it is a nativ
 const { dirname } = require("path");
 const bodyParser = require("body-parser");
 const app = express();
+import { apiKey } from './config.js';
+
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.get("/",function(req,res){
@@ -11,7 +14,7 @@ app.get("/",function(req,res){
 
 app.post("/",function(req,res){
 const query = req.body.cityName;
-const appid= "d6e536ac1d6ad234f92ded7ac0b33ab6";
+const appid= apiKey;
 const units = "metric"
 const url = "https://api.openweathermap.org/data/2.5/weather?q="+ query +"&appid="+ appid+"&units= "+units +"";
 https.get(url,function(response){  // https get function to access the data from the API.
