@@ -3,7 +3,8 @@ const https = require("https"); // Do nont have to install because it is a nativ
 const { dirname } = require("path");
 const bodyParser = require("body-parser");
 const app = express();
-import { apiKey } from './config.js';
+require("dotenv").config();
+
 
 
 
@@ -14,7 +15,7 @@ app.get("/",function(req,res){
 
 app.post("/",function(req,res){
 const query = req.body.cityName;
-const appid= apiKey;
+const appid= process.env.API_KEY;
 const units = "metric"
 const url = "https://api.openweathermap.org/data/2.5/weather?q="+ query +"&appid="+ appid+"&units= "+units +"";
 https.get(url,function(response){  // https get function to access the data from the API.
