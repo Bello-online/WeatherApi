@@ -1,11 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const https = require("https"); // Do nont have to install because it is a native node module
 const { dirname } = require("path");
 const bodyParser = require("body-parser");
 const app = express();
-require("dotenv").config();
-
-
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -23,6 +21,7 @@ https.get(url,function(response){  // https get function to access the data from
 
     response.on("data",function(data){   // The response when the site gets data with a call back function
        const weatherData = JSON.parse(data);  // Parsing the data from JSON from the API
+       console.log(weatherData);
        const temp = weatherData.main.temp;   // Extracting from the JSON
        const description = weatherData.weather[0].description;
        const icon = weatherData.weather[0].icon;
