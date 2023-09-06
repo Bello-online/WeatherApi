@@ -5,16 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Weather App</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
-        <form action="/" method="post"> <!-- Sending form data for the post request to handle in the app.js -->
-            <label for="cityInput"> City Name:</label>
-            <input id="cityInput" type="text" name="cityName">
-            <button type="submit">Get Weather</button>
-            <script src="" async defer></script>
-        </form>
+        <div class="container">
+            <h1 class="app-title">Weather App</h1>
+            <form action="/" method="post"> <!-- Sending form data for the post request to handle in the app.js -->
+                <label for="cityInput"> Enter City Name:</label>
+                <input id="cityInput" type="text" name="cityName" placeholder="e.g.,New York" >
+                <button type="submit">Get Weather</button>
+                <script src="" async defer></script>
+            </form>
+            <div class="weather-info">
+                <h2 class="city-name"></h2>
+                <p class="temperature"></p>
+                <p class="description"></p>
+            </div>
+        </div>
+
 
     </body>
 </html>

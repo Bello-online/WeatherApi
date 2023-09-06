@@ -5,7 +5,7 @@ const { dirname } = require("path");
 const bodyParser = require("body-parser");
 const app = express();
 
-
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.get("/",function(req,res){
     res.sendFile( __dirname + "/index.html");                
@@ -27,10 +27,18 @@ https.get(url,function(response){  // https get function to access the data from
        const icon = weatherData.weather[0].icon;
        const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
        
-       res.write("<h1> The temperature in " + query + " is " + temp + " degree Celcius.</h1>");
-       res.write("<p>The weather is currently " + description + "</p>");
-       res.write("<img src =" + imageURL + " > ")
-       res.send()
+    //    res.write("<h1> The temperature in " + query + " is " + temp + " degree Celcius.</h1>");
+    //    res.write("<p>The weather is currently " + description + "</p>");
+    //    res.write("<img src =" + imageURL + " > ")
+    let responseHTML = 
+    ` <div class="response-container">
+        <h2 class="response-title"> Weather in ${query}</h2>
+        <p class="response-text"> Temperature: ${temp}°C </p>
+        <p class="response-text"> Weather : ${description} </p>
+        <img class="weather-icon" src="${imageURL}" alt="Weather Icon">
+    </div
+    `;
+       res.send(responseHTML)
     })
 }) 
 })

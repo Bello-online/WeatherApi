@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3b368f;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #3b7484;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.app-title {
+    font-size: 28px;
+    color: #0991e0;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#cityInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #7b12c7;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #1e3e3d;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #e1f6fd;
+}
+
+.weather-info {
+    margin-top: 20px;
+}
+
+.city-name {
+    font-size: 24px;
+    color: #333;
+}
+
+.temperature {
+    font-size: 20px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.description {
+    font-size: 18px;
+    color: #777;
+}
+
+.weather-icon {
+    max-width: 100px;
+    margin-top: 20px;
+}
+
+/* Style the response container */
+.response-container {
+    background-color: #1056a2;
+    box-shadow: 0 2px 4px rgba(121, 95, 44, 0.255);
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.response-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #700dcdb6;
+}
+
+.response-text {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+}
